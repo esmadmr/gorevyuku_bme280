@@ -19,13 +19,17 @@ void setup() {
 void loop() {
 
   //float dizi_bir[4]; //Payload 1 için kullanılacak.
-  float payload_bir;
+ 
   float sicaklik = bme.readTemperature();
   float nem = bme.readHumidity();
   float basinc = bme.readPressure() / 100.0F;
   float irtifa = bme.readAltitude(SEALEVELPRESSURE_HPA);
 
-  Serial.print("P4,"); // bme280 p1, gpsneo8m p2,10dof p3,gorev yuku p4
+  Serial.print("P4,"); // bme280 p1, gpsneo8m p2,10dof p3,p4 gorev yuku bme
+  Serial.print(sicaklik);
+  Serial.print(",");
+  Serial.print(nem);
+  Serial.print(",");
   Serial.print(basinc);
   Serial.print(",");
   Serial.println(irtifa);
